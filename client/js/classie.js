@@ -29,7 +29,7 @@ if ( 'classList' in document.documentElement ) {
   hasClass = function( elem, c ) {
     return elem.classList.contains( c );
   };
-  addClass = function( elem, c ) {
+  addClass = function(elem, c ) {
     elem.classList.add( c );
   };
   removeClass = function( elem, c ) {

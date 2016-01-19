@@ -11,21 +11,21 @@
 var cbpAnimatedHeader = (function() {
 
 	var docElem = document.documentElement,
-		header = document.querySelector( '.navbar-fixed-top' ),
 		didScroll = false,
-		changeHeaderOn = 300;
+		changeHeaderOn = 50;
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
-				setTimeout( scrollPage, 250 );
+				setTimeout( scrollPage, 50 );
 			}
 		}, false );
 	}
 
 	function scrollPage() {
 		var sy = scrollY();
+		header = document.querySelector('.navbar-fixed-top')
 		if ( sy >= changeHeaderOn ) {
 			classie.add( header, 'navbar-shrink' );
 		}
