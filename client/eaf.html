@@ -111,10 +111,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/photos_project1/portada.jpg" class="img-responsive" alt="">
+                        <img src="img/portfolio/photos.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
-				<!--
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -122,9 +121,10 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/games.jpg" class="img-responsive" alt="">
                     </a>
                 </div>
+				<!--
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -344,7 +344,7 @@
                                     </strong>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -363,25 +363,45 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Juegos</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+							<div id="c2canvasdiv" style="margin: 0 auto; width: 640px; height: 480px;">
+
+								<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+								ID the runtime looks for in the jQuery ready event (above). -->
+								<canvas id="c2canvas" width="640" height="480">
+									<!-- This text is displayed if the visitor's browser does not support HTML5.
+									You can change it, but it is a good idea to link to a description of a browser
+									and provide some links to download some popular HTML5-compatible browsers. -->
+									Tu navegador parece no soportar HTML5.  Prueba actualizandolo.  <a href="http://www.whatbrowser.org">What is a browser?</a>
+									<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+									<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+									<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+									<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
+									<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/>
+								</canvas>
+								
+							</div>
+							<br />
+		
+							<!-- SCIRRA LTD LICENSE AGREEMENT
+								 FREE EDITION USERS ARE NOT ALLOWED TO REMOVE, MODIFY OR HIDE THE FOLLOWING
+								 LINES OF HTML5 CODE FROM THEIR EXPORTED GAMES. REMOVAL, MODIFICATION OR
+								 ATTEMPTS TO HIDE THIS MESSAGE WILL BE IN BREACH OF THE FREE EDITION LICENSE
+							-->
+							<!-- End of Scirra Ltd. free edition limitation -->
+							<a href="http://www.scirra.com" target="_blank" style="font-family:Arial;color:DodgerBlue;" title="Build games">Made with Construct 2 &mdash; the HTML5 game maker</a>
+
+                            <p>Este es un juego incompleto que hice hace un tiempo usando Construct 2. Advertnecia: No es completo, tiene muchos bugs.</p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
+                                <li>Nombre:
+                                    <strong>BattleCannon</strong>
                                 </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                <li>Fecha:
+                                    <strong>2012</strong>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -455,7 +475,7 @@
                                     </strong>
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
                         </div>
                     </div>
                 </div>
@@ -554,5 +574,59 @@
 
     <!-- Custom Theme JavaScript -->
     <!-- <script src="js/freelancer.js"></script> -->
+	
+	<!-- Construct 2 exported games require jQuery.  To save bandwidth, by default
+	this is set to grab it off the Google content delivery network (CDN). Fall back to local if not available. -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write("<script src='jquery-1.7.1.min.js'>\x3C/script>")</script>
+    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
+    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
+	<script src="c2runtime.js"></script>
 
+    <script>
+		jQuery(window).resize(function() {
+			if (window.c2resizestretchmode === 1)
+			{
+				window.c2resizestretchmode = 2;		// put back when breaking back out of fullscreen
+				var canvas = document.getElementById("c2canvas");
+				window.c2oldcanvaswidth = canvas.width;
+				window.c2oldcanvasheight = canvas.height;
+				window.c2eventtime = Date.now();
+				var w = jQuery(window).width();
+				var h = jQuery(window).height();
+				cr_sizeCanvas(w, h);
+			}
+			else if (window.c2resizestretchmode === 2)
+			{
+				// Size event fires twice on FF + Chrome, ignore second trigger
+				if (Date.now() > window.c2eventtime + 50)
+				{
+					window.c2resizestretchmode = 0;
+					cr_sizeCanvas(window.c2oldcanvaswidth, window.c2oldcanvasheight);
+				}
+			}
+		});
+	
+		// Start the Construct 2 project running on window load.
+		jQuery(document).ready(function ()
+		{
+			// Create new runtime using the c2canvas
+			cr.createRuntime("c2canvas");
+		});
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+    </script>
+	
+	
 </body>
