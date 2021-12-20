@@ -1,4 +1,4 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 Meteor.methods({
   sendEmail: function (email, texto) {
     check([texto, email], [String]);
